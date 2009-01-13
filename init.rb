@@ -1,1 +1,1 @@
-require 'acts_as_rpx_authenticated'
+require 'rpx_authentication'
