@@ -6,6 +6,11 @@ http://www.github.com/Nielsomat/acts_as_rpx_authenticated
 	or git submodule add git://github.com/Nielsomat/acts_as_rpx_authenticated.git vendor/plugins/acts_as_rpx_authenticated
 
 
+TODO
+	- prettify
+	- document
+	- integrate with clearence
+	- test
 
 
 Copyright (c) 2008 Niels Ganser, released under the MIT license. Even though this software is released
