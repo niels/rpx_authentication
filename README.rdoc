@@ -1,0 +1,17 @@
+= acts_as_rpx_authenticated
+
+http://www.github.com/Nielsomat/acts_as_rpx_authenticated
+
+	./script/plugin install git://github.com/Nielsomat/acts_as_rpx_authenticated.git
+	or git submodule add git://github.com/Nielsomat/acts_as_rpx_authenticated.git vendor/plugins/acts_as_rpx_authenticated
+
+
+
+
+Copyright (c) 2008 Niels Ganser, released under the MIT license. Even though this software is released
+"as is", I accept full responsibility for any bone fractures that might directly result from using it.
+So in the case of such spontaneous fracturing, feel free contact my armada of lawyers to discuss your
+ridiculously high compensation claims. 
+
+
+<b>Feature requests / bug reports / patches are welcomed on github or at niels at herimedia dot com!</b>
