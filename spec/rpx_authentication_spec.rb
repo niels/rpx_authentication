@@ -44,9 +44,11 @@ describe RpxAuthentication::Gateway, 'RPXnow.com gateway' do
     responses = [
       { "stat" => "fail" },
       { "err" => { "msg" => "Invalid parameter: apiKey", "code" => 1}, "stat" => "fail" },
-      { "stat" => "ok" },
+      { "stat" => "ok" }, # no profile info
       { "profile" => {} },
       "profile",
+      { "stat" => "ok", "profile" => { "preferredUsername" => "TestUser" } }, # no identifier
+      { "stat" => "ok", "profile" => { "identifier" => "" } }, # no identifier
       { }
     ]
     

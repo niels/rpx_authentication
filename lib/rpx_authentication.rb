@@ -22,7 +22,7 @@ module RpxAuthentication
       )
       
       Rails.logger.debug("RPXnow.com says: #{response.inspect} ENDOFRPXRESPONSE")
-      return response["profile"] if (response.is_a?(Hash) && response["stat"] == "ok" && response.include?("profile")) 
+      return response["profile"] if (response.is_a?(Hash) && response["stat"] == "ok" && response.include?("profile") && !response["profile"]["identifier"].blank?) 
       false
     end
   end
