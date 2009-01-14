@@ -1,19 +1,31 @@
-= acts_as_rpx_authenticated
+= rpx_authentication
 
-http://www.github.com/Nielsomat/acts_as_rpx_authenticated
+http://www.github.com/Nielsomat/rpx_authentication
 
-	./script/plugin install git://github.com/Nielsomat/acts_as_rpx_authenticated.git
-	or git submodule add git://github.com/Nielsomat/acts_as_rpx_authenticated.git vendor/plugins/acts_as_rpx_authenticated
+	./script/plugin install git://github.com/Nielsomat/rpx_authentication.git
+	or git submodule add git://github.com/Nielsomat/rpx_authentication.git vendor/plugins/rpx_authentication
+
+Allows for easy integration of rpxnow.com into your Rails app. 
+
+	"RPX handles the UI, authentication, and import of user profile and
+	registration data for your website. Get up and running in less than
+	a day. It’s easy for you, and your users!" -- rpxnow.com
+	
+
+== Configuration
+	ordimini% cat config/initializers/rpx_authentication.rb
+	RpxAuthentication.api_key = "bbk3454j35b3k4j3b4567876869b6j7bjkbjk4ba"
+	RpxAuthentication.user_model = Person
 
 
-TODO
-	- prettify
-	- document
-	- integrate with clearence
-	- test
+== TODO
+- prettify
+- document
+- integrate with clearence
+- test
 
 
-Copyright (c) 2008 Niels Ganser, released under the MIT license. Even though this software is released
+Copyright (c) 2009 Niels Ganser, released under the MIT license. Even though this software is released
 "as is", I accept full responsibility for any bone fractures that might directly result from using it.
 So in the case of such spontaneous fracturing, feel free contact my armada of lawyers to discuss your
 ridiculously high compensation claims. 
