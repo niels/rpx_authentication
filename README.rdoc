@@ -1,9 +1,6 @@
 = rpx_authentication
-
 http://www.github.com/Nielsomat/rpx_authentication
 
-	./script/plugin install git://github.com/Nielsomat/rpx_authentication.git
-	or git submodule add git://github.com/Nielsomat/rpx_authentication.git vendor/plugins/rpx_authentication
 
 Allows for easy integration of rpxnow.com into your Rails app. 
 
@@ -12,10 +9,39 @@ Allows for easy integration of rpxnow.com into your Rails app.
 	a day. It’s easy for you, and your users!" -- rpxnow.com
 	
 
+
+<b>This is not ready for general consumption (e.g. not finished & not functional in any but my setup)!</b>
+
+
+
+== Installation
+
+	./script/plugin install git://github.com/Nielsomat/rpx_authentication.git
+or
+	git submodule add git://github.com/Nielsomat/rpx_authentication.git vendor/plugins/rpx_authentication
+
+
+
 == Configuration
 	ordimini% cat config/initializers/rpx_authentication.rb
 	RpxAuthentication.api_key = "bbk3454j35b3k4j3b4567876869b6j7bjkbjk4ba"
 	RpxAuthentication.user_model = Person
+	
+	
+	
+== Usage
+<b>I say it again: currently it won't work in your application without some hacking!</b>
+- Stick the following into a view (possibly adapting session_url() to your setup)
+		<iframe src="https://YOUR-APP-NAME.rpxnow.com/openid/embed?token_url=<%= CGI::escape(session_url()) %>"
+		  scrolling="no" frameBorder="no" style="width:400px;height:240px;">
+		</iframe>
+- The controller responding to the above session_url should 
+		include RpxAuthentication::SessionsController
+	which provides a create function out of the box
+- Your user model (e.g. class User < ActiveRecord::Base; end) should
+		include RpxAuthentication::UserModel
+	which allows for easy creation of new users from profile data provided by RPXnow.com
+
 
 
 == TODO
@@ -25,10 +51,12 @@ Allows for easy integration of rpxnow.com into your Rails app.
 - test
 
 
+
 Copyright (c) 2009 Niels Ganser, released under the MIT license. Even though this software is released
 "as is", I accept full responsibility for any bone fractures that might directly result from using it.
 So in the case of such spontaneous fracturing, feel free contact my armada of lawyers to discuss your
 ridiculously high compensation claims. 
+
 
 
 <b>Feature requests / bug reports / patches are welcomed on github or at niels at herimedia dot com!</b>
